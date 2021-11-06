@@ -1,0 +1,115 @@
+body {
+  background-color: #560a22;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Quicksand';
+  padding-top: 1%;
+  word-wrap: break-word;
+  width: 200 px;
+}
+
+.logo {
+  width: 300px;
+  height: 300px;
+}
+
+.frontlogo {
+  width: 500px;
+  height: 300px;
+}
+
+.siemenslogo {
+  width: 120px;
+  height: 60px;
+  float: right;
+  margin-right: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 2%;
+  align-items: center;
+}
+
+.WalletInfo {
+  display: flex;
+  text-align: center;
+}
+
+.Block {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10%;
+  margin: 2%;
+  box-sizing: border-box;
+}
+
+.Transaction {
+  padding: 5%;
+  box-sizing: border-box;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+
+.Transaction_status {
+  padding: 5%;
+  box-sizing: border-box;
+  text-align: left; 
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 2%;
+}
+
+.Transaction_display {
+  padding: 5%;
+  box-sizing: border-box;
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 17%;
+  margin-bottom: 2%;
+}
+
+.Blockchain, .ConductTransaction, .TransactionPool , .DecryptConductTransaction, .ConductPackageTransaction, .DecryptPackage
+{
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2%;
+  height: 300px;
+}
+
+.EncrpytTransaction, .ProductTransaction {
+  margin: 5%;
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 255, 255);
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.alert {
+  width:40%;    
+}
+
+a, a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+hover {
+  color: rgb(255, 255, 255);
+}
+
+table {
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+
+input, button {
+  color: rgb(255, 255, 255);
+  transition: width 0.4s ease-in-out; 
+}
