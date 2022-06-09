@@ -1,0 +1,12 @@
+pip3 install Flask==1.1.1
+pip3 install pubnub==4.1.6
+pip3 install requests==2.22.0
+pip3 install cryptography==2.7
+pip3 install Flask-Cors==3.0.8
+pip3 install pycrypto
+pip3 install pyqrcode
+pip3 install pypng
+pip3 install qrcode
+pip3 install qrcode[pil]
+pip3 install opencv-python
+pip3 install pyzbar
