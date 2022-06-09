@@ -1,4 +1,4 @@
-# Distributors installation <a name="TOP"></a>
+# Distributors Module <a name="TOP"></a>
 
 ## Requirements
 
