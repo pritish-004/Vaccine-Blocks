@@ -1,137 +1,32 @@
-# Wolt Grade - Software Engineer Program Assignment - Pritish Naik <a name="TOP"></a>
+# Vaccine Blocks: - Blockchain based vaccine supplychain using Encrypted QRcode <a name="TOP"></a>
 
-## Requirements
+## Motivation – Scale of the problem
 
-    * python3 (3.8.10)
-    * Flask
-    * dateutil
-    * Requests
-    * pytest
+    * The covid vaccine distribution is the biggest supply chain challenge that mankind has ever seen.
+    * The reach of a vaccine distribution in best scenario was not up to 85% of intended population.
+    * Distributing vaccine to 8 billion population : 8000 - 747 cargo planes.
+    * The cost of vaccine production is around 30 to 40 percent, rest is delivery.
+    * COVID19 virus is mutating, periodic updates in vaccine might be required.
 
-## Installation Steps
+## Challenges
 
-This assignment is implemented on **Ubuntu-20 OS**.
+    * Message integrity –  Product details can be tampered in the server by anyone
+    * Replay attack – Instead of new product data, old data is input onto the server
+    * Difficult to verify Authenticity – What server gets from manufacturer A, may be manufactured by manufacturer B
+    * Centralized ownership – Only a small subset of participants own the network
+    * Repudiation – If server shows that counterfeit was introduced by distributor X, X can deny and say that here was a MITM attack. 
+    * Fake product getting introduced during transit from OEM to customer
 
-If you want to install dependencies in **Windows OS**, then replacing commands with _python3_ with _python_ and _pip3_ with _pip_ would work.
+## Approach
 
-### Step 1: Go to the folder that you want to install the project.
+    * Message integrity is achieved by Hashing messages before they are sent 
+    * Replay attack is mitigated with the help of Authentic Time Stamping on each message
+    * Repudiation and difficulty in verifying authenticity are solved using Digital Signature assuming that digital signatures cannot be forged, and private keys are kept safe.   
+    * The Centralized ownership problem is solved using Blockchain 
+    * Encrypted QR code and encrypted & password protected RFID is used on low value product and high value products respectively in order to minimize counterfeits
 
-### Step 2: Set up the virtual environment
+## Results
 
-```
-sudo apt-get update
-sudo apt-get install python3-venv
-python3 -m venv Wolt-env
-```
-
-### Step 3: Activate the virtual environment
-
-```
-source Wolt-env/bin/activate
-```
-
-### Step 4: Check if the virtual environment is properly set
-
-```
-echo $VIRTUAL_ENV
-```
-
-### Step 5: Install pip3
-
-```
-sudo apt-get install python3-pip
-```
-
-### Step 6.a: Install all the dependencies required for the project
-
-```
-pip3 install -r requirements.txt
-```
-
-### Step 6.b: Check the following commands if you wish to install individual dependencies. (Optional)
-
-```
-pip3 install Flask==2.0.2
-pip3 install requests==2.26.0
-pip3 install pytest==6.2.5
-pip3 install python-dateutil==2.8.2
-```
-
-### Step 7: Make sure you have activated the virtual enironment
-
-```
-source Wolt-env/bin/activate
-```
-
-### Step 8: Start the backend application
-
-```
-python3 -m backend.app
-```
-
-### Step 9: Run the Testcases
-
-Open another terminal, go to project folder and follow the following instructions
-
-### Step 9.a: Activate the virtual enironment
-
-```
-source Wolt-env/bin/activate
-```
-
-### Step 9.b: Start the tests
-
-```
-python3 -m pytest backend/tests
-```
-
-### If you want to use Postman:
-
-Base url: http://127.0.0.1:5000/calculate-delivery-fee
-
-Input JSON data:
-
-```javascript
-{
-    "cart_value": 790,
-    "delivery_distance": 2235,
-    "amount_of_items": 4,
-    "time": "2021-10-12T13:00:00Z"
-}
-```
-
-Output JSON data:
-
-```javascript
-{
-    "delivery_fee": 710
-}
-```
-
-## Description and Approach
-
-### Assumptions for the special rule:
-
-    * As the delivery is free (0€) when the cart value is equal or more than 100€, I have assumed that the delivery fee includes the possible surcharge fees which would also be free(0€).
-
-    * During the Friday rush (3 - 7 PM UTC), the delivery fee will be multiplied by 1.1x. Here, I have assumed that the exact time 7PM(19:00:00Z) is excluded.
-
-    * Delivery distance can cannot be Zero.(No option of Takeaway).
-
-### Error messages:
-
-Error management considers following and returns relevant standard API code:
-
-    * The application responds with HTTP response code = 400 if the cart value, delivery distance and amount of items are less than or equal to zero.
-
-    * The application responds with HTTP response code = 400 if the cart value, delivery distance and amount of items are not of integer type.
-
-    * The time must be a string in ISO format. Otherwise, the application responds with HTTP response code 400 error.
-
-    * HTTP Post request must contain all the required fields, any missing field will throw response code 404 error.
-
-### Return codes
-
-    * 200: OK Successful.
-    * 400: Bad Request, Bad input parameters.
-    * 404: Missing JSON parameters.
+    * Achieved better visibility of manufactured product whereabouts
+    * Minimized scope for introducing counterfeits for high value and low value item
+    * Proposed solution requires minimum amount of effort from the participant
