@@ -1,4 +1,4 @@
-# Distributors Module <a name="TOP"></a>
+# Distributor's Module <a name="TOP"></a>
 
 ## Requirements
 
