@@ -124,3 +124,5 @@ npm run start
 source blockchain-env/bin/activate
 python3 -m backend.app
 ```
+
+![alt text](Distributor.png)
