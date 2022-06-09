@@ -8,6 +8,8 @@
     * The cost of vaccine production is around 30 to 40 percent, rest is delivery.
     * COVID19 virus is mutating, periodic updates in vaccine might be required.
 
+![alt text](Centralised-SC.png)
+
 ## Challenges
 
     * Message integrity –  Product details can be tampered in the server by anyone
@@ -24,6 +26,8 @@
     * Repudiation and difficulty in verifying authenticity are solved using Digital Signature assuming that digital signatures cannot be forged, and private keys are kept safe.   
     * The Centralized ownership problem is solved using Blockchain 
     * Encrypted QR code and encrypted & password protected RFID is used on low value product and high value products respectively in order to minimize counterfeits
+
+![alt text](BLockchain-SC.png)
 
 ## Results
 
