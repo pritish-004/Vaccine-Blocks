@@ -166,28 +166,21 @@ def check_transaction_status():
             transaction_display = transaction
             if (transaction.get("status") == "M-Inventory" and product_id_list[transaction.get("product_id")] == 1):
                 transaction_display["S1"] = "##>"
-                transaction_display["S2"] = " "
-                transaction_display["S3"] = " "
-                transaction_display["S4"] = " "
-                transaction_display["S5"] = " "
-                transaction_display["S5"] = " "
-                transaction_display["S6"] = " "
+                for i in range(2,7):
+                    transaction_display[f"S{i}"] = " "
                 transaction_list.append(transaction_display) 
             elif (transaction.get("status") =="M-D Transit" and product_id_list[transaction.get("product_id")] == 2):
                 transaction_display["S1"] = "## "
                 transaction_display["S2"] = "##>"
-                transaction_display["S3"] = " "
-                transaction_display["S4"] = " "
-                transaction_display["S5"] = " "
-                transaction_display["S6"] = " "
-                transaction_list.append(transaction_display) 
+                for i in range(3,7):
+                    transaction_display[f"S{i}"] = " "
+                transaction_list.append(transaction_display)
             elif (transaction.get("status") =="D-Inventory" and product_id_list[transaction.get("product_id")] == 3):
                 transaction_display["S1"] = "##"
                 transaction_display["S2"] = "##"
                 transaction_display["S3"] = "##>"
-                transaction_display["S4"] = " "
-                transaction_display["S5"] = " "
-                transaction_display["S6"] = " "
+                for i in range(4,7):
+                    transaction_display[f"S{i}"] = " "
                 transaction_list.append(transaction_display)       
     transaction_list_sorted = sorted(transaction_list, key = lambda t : t['product_id'])
     return jsonify(transaction_list_sorted)

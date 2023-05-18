@@ -7,6 +7,7 @@ import {API_BASE_URL} from '../config';
 function App() {
     const [walletInfo, setWalletInfo] = useState({});
     const API_ENDPOINT = '/wallet/info';
+
     //fetch the terminal address
     useEffect(() => {
         fetch(`${API_BASE_URL}${API_ENDPOINT}`)

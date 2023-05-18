@@ -119,51 +119,40 @@ def check_transaction_status():
             transaction_display_x = transaction_x
             if (transaction_x.get("status") == "M-Inventory" and product_id_list_x[transaction_x.get("product_id")] == 1):
                 transaction_display_x["S1"] = "##>"
-                transaction_display_x["S2"] = " "
-                transaction_display_x["S3"] = " "
-                transaction_display_x["S4"] = " "
-                transaction_display_x["S5"] = " "
-                transaction_display_x["S5"] = " "
-                transaction_display_x["S6"] = " "
-                transaction_list_x.append(transaction_display_x) 
+                for i in range(2,7):
+                    transaction_display_x[f"S{i}"] = " "
+                transaction_list_x.append(transaction_display_x)
             elif (transaction_x.get("status") =="M-D Transit" and product_id_list_x[transaction_x.get("product_id")] == 2):
-                transaction_display_x["S1"] = "## "
-                transaction_display_x["S2"] = "##>"
-                transaction_display_x["S3"] = " "
-                transaction_display_x["S4"] = " "
-                transaction_display_x["S5"] = " "
-                transaction_display_x["S6"] = " "
+                for i in range(1,2):
+                    transaction_display_x[f"S{i}"] = "##"
+                    transaction_display_x["S2"] = "##>"
+                for i in range(3,7):
+                    transaction_display_x[f"S{i}"] = " "
                 transaction_list_x.append(transaction_display_x) 
             elif (transaction_x.get("status") =="D-Inventory" and product_id_list_x[transaction_x.get("product_id")] == 3):
-                transaction_display_x["S1"] = "##"
-                transaction_display_x["S2"] = "##"
-                transaction_display_x["S3"] = "##"
-                transaction_display_x["S4"] = "##>"
-                transaction_display_x["S5"] = " "
-                transaction_display_x["S6"] = " "
-                transaction_list_x.append(transaction_display_x)       
+                for i in range(1,3):
+                    transaction_display_x[f"S{i}"] = "##"
+                transaction_display_x["S3"] = "##>"
+                for i in range(4,7):
+                    transaction_display_x[f"S{i}"] = " "
+                transaction_list_x.append(transaction_display_x)
             elif (transaction_x.get("status") =="D-R Transit" and product_id_list_x[transaction_x.get("product_id")] == 3):
-                transaction_display_x["S1"] = "##"
-                transaction_display_x["S2"] = "##"
-                transaction_display_x["S3"] = "##"
+                for i in range(1,4):
+                    transaction_display_x[f"S{i}"] = "##"
                 transaction_display_x["S4"] = "##>"
-                transaction_display_x["S5"] = " "
-                transaction_display_x["S6"] = " "
+                for i in range(5,7):
+                    transaction_display_x[f"S{i}"] = " "
                 transaction_list_x.append(transaction_display_x)       
             elif (transaction_x.get("status") =="R-Inventory" and product_id_list_x[transaction_x.get("product_id")] == 3):
-                transaction_display_x["S1"] = "##"
-                transaction_display_x["S2"] = "##"
-                transaction_display_x["S3"] = "##"
-                transaction_display_x["S4"] = "##"
+                for i in range(1,5):
+                    transaction_display_x[f"S{i}"] = "##"
                 transaction_display_x["S5"] = "##>"
-                transaction_display_x["S6"] = " "
+                for i in range(6,7):
+                    transaction_display_x[f"S{i}"] = " "
                 transaction_list_x.append(transaction_display_x)       
             elif (transaction_x.get("status") =="R-Customer" and product_id_list_x[transaction_x.get("product_id")] == 3):
-                transaction_display_x["S1"] = "##"
-                transaction_display_x["S2"] = "##"
-                transaction_display_x["S3"] = "##"
-                transaction_display_x["S4"] = "##"
-                transaction_display_x["S5"] = "##"
+                for i in range(1,6):
+                    transaction_display_x[f"S{i}"] = "##"
                 transaction_display_x["S6"] = "##>"
                 transaction_list_x.append(transaction_display_x)       
 
